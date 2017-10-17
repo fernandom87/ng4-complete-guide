@@ -28,4 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Bootstrap
 
-Inside the project filter use 'ng install --save boostrap'
+Inside the project folder use 'npm install --save bootstrap'. Edit .angular-cli.json and add on sytles "../node_modules/bootstrap/dist/css/bootstrap.min.css"
