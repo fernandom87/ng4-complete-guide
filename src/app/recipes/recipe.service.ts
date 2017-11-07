@@ -11,6 +11,7 @@ export class RecipeService {
 
   private recipes: Recipe[] =[
     new Recipe(
+      1,
       'Carrot-Ricotta-Salad',
       'Carrot-Ricotta-Salad',
       'http://www.seriouseats.com/recipes/assets_c/2016/05/20160503-fava-carrot-ricotta-salad-recipe-1-thumb-1500xauto-431710.jpg',
@@ -19,6 +20,7 @@ export class RecipeService {
       ]
     ),
     new Recipe(
+      2,
       'Mexican Chicken',
       'Mexican Chicken',
       'http://img.taste.com.au/2rTvVECZ/taste/2016/11/one-pan-mexican-chicken-78891-1.jpeg',
@@ -41,6 +43,15 @@ export class RecipeService {
 
   getRecipes(){
     return this.recipes.slice();// retur new array - copy
+  }
+
+  getRecipe(id){
+    const recipe = this.recipes.find(
+      (s) => {
+        return s.id === id;
+      }
+    );
+    return recipe;
   }
 
 }
