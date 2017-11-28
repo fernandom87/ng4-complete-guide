@@ -13,6 +13,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 
 @NgModule({
   declarations: [
+    AuthenticatedDirective,
     SignupComponent,
     SigninComponent
   ],
@@ -20,6 +21,10 @@ import { AuthRoutingModule } from './auth-routing.module';
     CommonModule,
     FormsModule,
     AuthRoutingModule
+  ],
+  exports: [
+    AuthenticatedDirective
   ]
+
 })
 export class AuthModule{}

@@ -1,14 +1,9 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
-import { SignupComponent } from './auth/signup/signup.component';
-import { SigninComponent } from './auth/signin/signin.component';
+import { HomeComponent } from './core/home/home.component';
 
-import { AuthGuard } from './auth/auth-guard.service';
-
-const authRoutes: Routes = [
+const appRoutes: Routes = [
   {path:'', component: HomeComponent},
   {path: 'recipes',loadChildren: './recipes/recipes.module#RecipesModule' } //LazyLoading
   //{ path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule', canLoad: [AuthGuard] }
@@ -16,7 +11,7 @@ const authRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(authRoutes)
+    RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules})
     //RouterModule.forRoot(appRoutes, {useHash: true})
   ],
   exports: [RouterModule]
